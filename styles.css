@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(56, 28, 94);
+  color: lavenderblush;
+}
+
+.game-score {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  padding: 1em;
+  /* background-color: rgba(0, 0, 0, .30) */
+}
+
+.score {
+  display: inline-block;
+  background-color: whitesmoke;
+  padding: .5em 1em;
+  margin: .5em;
+  border-radius: .5em;
+  border: 4px solid lightslategrey;
+  font-weight: 900;
+  text-shadow: 0 4px 4px rgba(0,0,0,.16);
+
+}
+
+.player-score {
+  background-color: rgb(235, 136, 56);
+  border-color: rgb(161, 71, 35);
+  color: white;
+}
+
+.cpu-score {
+  background-color: rgb(56, 199, 235);
+  border-color: rgb(35, 115, 161);
+  color: white;
+
+}
+
+.updatingScore {
+  animation-name: updateScore;
+  animation-duration: .75s;
+  animation-timing-function: ease;
+}
+
+@keyframes updateScore {
+  0% {
+    box-shadow: inset 0 0 0 rgba(255, 255, 255, 0);
+  }
+
+  50% {
+    box-shadow: inset 0 0 1.5em white;
+    font-size: 2rem;
+  }
+
+
+  100% {
+    box-shadow: inset 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+.game-choices {
+  display: flex;
+  /* flex: 1; */
+}
+
+.rps-btn {
+  flex: 1;
+  padding: 1em;
+  font-size: 2rem;
+  text-shadow: 0 4px 8px rgba(0,0,0,.16), 0 4px 8px rgba(0,0,0,.16), 0 0 12px rgba(0,0,0,.35);
+  border: none;
+  cursor: pointer;
+}
+
+.rps-btn:hover {
+  box-shadow: 0 0 16px rgba(0,0,0,.16);
+}
+
+.btn-rock {
+  background-color: hsl(248, 53%, 58%);
+}
+
+.btn-paper {
+  background-color: hsl(39, 77%, 83%);
+}
+
+.btn-scissors {
+  background-color: hsl(80, 61%, 50%);
+}
+
+
+.btn-rock:hover {
+  background-color: hsl(248, 43%, 68%);
+}
+
+
+.btn-paper:hover {
+  background-color: hsl(39, 67%, 93%);
+}
+
+.btn-scissors:hover {
+  background-color: hsl(80, 51%, 60%);
+}
+
+
+/* Round results */
+.round-result {
+  text-align: center;
+  font-size: 4rem;
+}
+.round-results {
+
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  opacity: 0;
+
+  transition: opacity .3s ease-in;
+}
+.round-results.visible {
+  opacity: 1;
+}
+
+.round-results > * {
+  flex: 1;
+  background-color: slategrey;
+  border-radius: 1em;
+  padding: 2em;
+  margin: 2em 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.player-round-results {
+  background-color: rgb(235, 136, 56);
+}
+
+.cpu-round-results {
+  background-color: rgb(56, 199, 235);
+}

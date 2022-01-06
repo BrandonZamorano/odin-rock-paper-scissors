@@ -4,9 +4,32 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
     <title>Rock Paper Scissors!</title>
   </head>
   <body>
+    <div class="game-score">
+      <div>Player Score: <span class="score player-score">0</span></div>
+      <div>CPU Score: <span class="score cpu-score">0</span></div>
+    </div>
+    <h2 class="round-result"> </h2>
+    <div class="round-results">
+      <div class="player-round-results">
+        <h3>You chose <span class="player-choice">🪨</span></h2>
+      </div>
+      <div class="cpu-round-results">
+
+        <h3>They chose <span class="cpu-choice">✂️</span></h2>
+      </div>
+    </div>
+    <div class="game-choices">
+      <button data-rps-choice="rock" class="btn rps-btn btn-rock">🪨</button>
+      <button data-rps-choice="paper" class="btn rps-btn btn-paper">📃</button>
+      <button data-rps-choice="scissors" class="btn rps-btn btn-scissors">
+        ✂️
+      </button>
+    </div>
+
     <script src="./script.js"></script>
   </body>
 </html>
